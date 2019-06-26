@@ -40,7 +40,7 @@ export default {
   data() {
     return {
       cron: '',
-      show: false
+      show: false           // 说明3（下有解释）
     }
   },
   methods: {
@@ -55,7 +55,7 @@ export default {
 }
 </script>
 ```
-###  案例说明
+###  案例说明(三个步骤)
 ```
 说明1、首先引入插件 ecron，并注册
 说明2、写一个方法接受ecron组件给你的返回值
