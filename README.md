@@ -62,3 +62,44 @@ export default {
 说明3、定义一个变量，控制组件的隐藏和显示
 
 ```
+
+## 解决方案
+### 在某些环境 样式会变 如图
+![Image text](./assets/error.jpg)
+
+### 解决办法 添加两层div 和相应的css来解决
+```
+// html
+<div class="ecron" v-if="show">
+    <div class="center">
+        <ecron  v-if="show" @get="get"></ecron>    
+    </div>
+</div>  
+
+// less
+.ecron {
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    left: 240px;
+    right: 0;
+    bottom: 0;
+    top: 64px;
+    background-color: antiquewhite;
+    .center {
+        width: 800px;
+        // height: 100%;
+        // margin: 0 auto;
+        margin-left: 120px;
+        margin-top: 50px;
+        background-color: #ffffff;
+        padding: 10px;
+    }
+}
+```
+#### 解决完如下图
+
+![Image text](./assets/resolve.jpg)
+
+
+
